@@ -1,4 +1,5 @@
 import React from 'react';
+import './Stopwatch.css';
 
 
 class Stopwatch extends React.Component{
@@ -12,18 +13,20 @@ constructor(props){
 }
 
 incrementcount(){
+    if(!this.state.start)
+    {
     this.setState({ start: true});
     this.toreset=setInterval(()=>{
 
     this.setState({ timer: this.state.timer + 1 })
 },1000);
     
-
+    }
    
 }
 
 reset(){
-    this.setState({ timer: 0});
+    this.setState({ start:false,timer: 0});
     clearInterval(this.toreset);
  
 }
@@ -33,12 +36,12 @@ reset(){
 
 pause(){
     //this.setState({ timer: 0});
-    if(this.state.start==true)
+    if(this.state.start===true)
     {
     clearInterval(this.toreset); 
     this.setState({ start: false});
     } else{
-        if(this.state.timer!=0)
+        if(this.state.timer!==0)
         {
             this.incrementcount();
         }
