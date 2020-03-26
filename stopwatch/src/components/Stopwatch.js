@@ -43,18 +43,18 @@ pause(){
 render() {
     
     return (
-       <div>
-         <h1 >{this.state.timer}</h1>  
-      <button onClick={this.start} >
-     Start
-      </button>
-      <button onClick={this.pause}  >
-     Pause
-      </button>
-      <button onClick={this.reset} >
-     Reset
-      </button >
-      </div>
+    <div>
+        <h1 >{this.state.timer}</h1>  
+        <button onClick={this.start} >
+        Start
+        </button>
+        <button onClick={this.pause}  >
+        Pause
+        </button>
+        <button onClick={this.reset} >
+        Reset
+        </button >
+    </div>
       
     );
   }
